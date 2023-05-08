@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Cheese Recommender - Index{% endblock %}
+
+{% block content %}
+    <form method="POST" action="/">
+        <label for="user_input">What qualities do you like in cheese? (Press Enter to skip)</label>
+        <input type="text" name="user_input" id="user_input"><br><br>
+        <label for="exclude_words">Enter any qualities you do not want in your cheese (press Enter to skip):</label>
+        <input type="text" name="exclude_words" id="exclude_words"><br><br>
+        <input type="submit" value="Get Recommendations">
+    </form>
+
+    {% if recommendations is not none and not recommendations.empty %}
+    <h2>Recommendations:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cheese</th>
+                    <th>Origin</th>
+                    <th>Texture</th>
+                    <th>Flavor</th>
+                    <th>Aroma</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cheese in recommendations %}
+                    <tr>
+                        <td><a href="/cheese/{{ loop.index0 }}">{{ cheese['cheese'] }}</a></td>
+                        <td>{{ cheese['origin'] }}</td>
+                        <td>{{ cheese['texture'] }}</td>
+                        <td>{{ cheese['flavor'] }}</td>
+                        <td>{{ cheese['aroma'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    {% endif %}
+
+    {% if cheese_details %}
+        <h3>Selected Cheese Details:</h3>
+        <ul>
+            <li>Cheese: {{ cheese_details['cheese'] }}</li>
+            <li>Milk: {{ cheese_details['milk'] }}</li>
+            <li>Kind: {{ cheese_details['kind'] }}</li>
+            <li>Description: {{ cheese_details['description'] }}</li>
+        </ul>
+    {% endif %}
+{% endblock %}

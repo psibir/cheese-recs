@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Cheese Recommender - Results{% endblock %}
+
+{% block content %}
+    <h2>Recommendations:</h2>
+    {% if recommendations is not none and not recommendations.empty %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Cheese</th>
+                    <th>Origin</th>
+                    <th>Texture</th>
+                    <th>Flavor</th>
+                    <th>Aroma</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, cheese in recommendations.iterrows() %}
+                    <tr>
+                        <td><a href="/cheese/{{ index }}">{{ cheese['cheese'] }}</a></td>
+                        <td>{{ cheese['origin'] }}</td>
+                        <td>{{ cheese['texture'] }}</td>
+                        <td>{{ cheese['flavor'] }}</td>
+                        <td>{{ cheese['aroma'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No recommendations available.</p>
+    {% endif %}
+
+    {% if cheese_details %}
+        <h3>Selected Cheese Details:</h3>
+        <ul>
+            <li>Cheese: {{ cheese_details['cheese'] }}</li>
+            <li>Milk: {{ cheese_details['milk'] }}</li>
+            <li>Kind: {{ cheese_details['kind'] }}</li>
+            <li>Description: {{ cheese_details['description'] }}</li>
+        </ul>
+    {% endif %}
+{% endblock %}
