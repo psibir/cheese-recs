@@ -21,28 +21,6 @@ The `get_recommendations` method takes in user input, number of recommendations,
 
 In the `main` function, the user is prompted to input their cheese preferences and excluded words. If no input or exclusion words are provided, the function generates random cheese recommendations. Otherwise, the function loops through the recommendations and prompts the user if they would like more information on any of the cheeses. The function then prompts the user to see more recommendations or quit. The recommendations are displayed in a tabular format using the `tabulate` library.
 
-## Installation
-
-On MacOs or Linux:
-
-
-    git clone https://github.com/psibir/cheese-recommendation.git
-    cd cheese-recommendation
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install -r requirements.txt
-    python3 main.py
-    
-
-
-On Windows: 
-
-    git clone https://github.com/psibir/cheese-recommendation.git
-    cd cheese-recommendation
-    python3 -m venv .venv
-    .\.venv\Scripts\activate
-    pip install -r requirements.txt
-    python3 main.py
 
 
 ## Usage
