@@ -1,69 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{% block title %}🧀 Cheese Recommender{% endblock %}</title>
-    <style>
-        html {
-            height: 100%;
-        }
+{% extends 'base.html' %}
 
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f2db56;
-        }
+{% block title %}Cheese Details{% endblock %}
 
-        header {
-            background: linear-gradient(to right, #f2d037, transparent);
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav li {
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        h1 {
-            margin-top: 20px;
-        }
-
-        footer {
-            margin-top: auto;
-            background-color: #dfc94e;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="about">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <h1>🧀 Cheese Recommender</h1>
-
-    {% block content %}
-    {% endblock %}
-
-    <footer>
-        &copy; 2023 Trevor Bloomfield. All rights reserved.
-    </footer>
-</body>
-</html>
+{% block content %}
+    <h2>Cheese Details</h2>
+    <ul>
+        <li>Cheese: {{ cheese_details['cheese'] }}</li>
+        <li>Country: {{ cheese_details['country'] }}</li>
+        <li>Region: {{ cheese_details['region'] }}</li>
+        <li>Family: {{ cheese_details['family'] }}</li>
+        <li>Rind: {{ cheese_details['rind'] }}</li>
+        <li>Milk: {{ cheese_details['milk'] }}</li>
+        <li>Fat: {{ cheese_details['fat'] }}</li>
+        <li>Kind: {{ cheese_details['kind'] }}</li>
+        <li>Description: {{ cheese_details['description'] }}</li>
+        <li>Producer: {{ cheese_details['producer'] }}</li>
+        <li>Synonyms: {{ cheese_details['synonyms'] }}</li>
+    </ul>
+    <a href="javascript:history.back()">Back to Recommendations</a>
+{% endblock %}
