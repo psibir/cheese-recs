@@ -34,9 +34,16 @@ def cheese_details(index):
     cheese = recommender.df.iloc[index]
     cheese_details = {
         'cheese': cheese['cheese'],
+        'country': cheese['origin'],
+        'region': cheese['region'],
+        'family': cheese['family'],
+        'rind': cheese['rind'],
         'milk': cheese['milk'],
+        'fat': cheese['fat'],
         'kind': cheese['kind'],
-        'description': cheese['description']
+        'description': cheese['description'],
+        'producer': cheese['producer'],
+        'synonyms': cheese['synonyms']
     }
 
     # Render the cheese details template
