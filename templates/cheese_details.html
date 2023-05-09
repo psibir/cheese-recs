@@ -3,12 +3,42 @@
 {% block title %}Cheese Details{% endblock %}
 
 {% block content %}
-    <h2>Cheese Details</h2>
+    <h2>{{ cheese_details['cheese'] }}</h2>
+    <h3>Cheese Details</h3>
     <ul>
-        <li>Cheese: {{ cheese_details['cheese'] }}</li>
-        <li>Milk: {{ cheese_details['milk'] }}</li>
-        <li>Kind: {{ cheese_details['kind'] }}</li>
-        <li>Description: {{ cheese_details['description'] }}</li>
+        {% if cheese_details.cheese %}
+            <li>Cheese: {{ cheese_details['cheese'] }}</li>
+        {% endif %}
+        {% if cheese_details.origin %}
+            <li>Country: {{ cheese_details['origin'] }}</li>
+        {% endif %}
+        {% if cheese_details.region %}
+            <li>Region: {{ cheese_details['region'] }}</li>
+        {% endif %}
+        {% if cheese_details.family %}
+            <li>Family: {{ cheese_details['family'] }}</li>
+        {% endif %}
+        {% if cheese_details.rind %}
+            <li>Rind: {{ cheese_details['rind'] }}</li>
+        {% endif %}
+        {% if cheese_details.milk %}
+            <li>Milk: {{ cheese_details['milk'] }}</li>
+        {% endif %}
+        {% if cheese_details.fat %}
+            <li>Fat: {{ cheese_details['fat'] }}</li>
+        {% endif %}
+        {% if cheese_details.kind %}
+            <li>Kind: {{ cheese_details['kind'] }}</li>
+        {% endif %}
+        {% if cheese_details.description %}
+            <li>Description: {{ cheese_details['description'] }}</li>
+        {% endif %}
+        {% if cheese_details.producer %}
+            <li>Producer: {{ cheese_details['producer'] }}</li>
+        {% endif %}
+        {% if cheese_details.synonyms %}
+            <li>Synonyms: {{ cheese_details['synonyms'] }}</li>
+        {% endif %}
     </ul>
     <a href="javascript:history.back()">Back to Recommendations</a>
 {% endblock %}
