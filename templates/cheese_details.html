@@ -6,37 +6,37 @@
     <h2>{{ cheese_details['cheese'] }}</h2>
     <h3>Cheese Details</h3>
     <ul>
-        {% if cheese_details.cheese %}
+        {% if cheese_details.cheese and not cheese_details.cheese == 'NaN' %}
             <li>Cheese: {{ cheese_details['cheese'] }}</li>
         {% endif %}
-        {% if cheese_details.origin %}
+        {% if cheese_details.origin and not cheese_details.origin == 'NaN' %}
             <li>Country: {{ cheese_details['origin'] }}</li>
         {% endif %}
-        {% if cheese_details.region %}
+        {% if cheese_details.region and not cheese_details.region == 'NaN' %}
             <li>Region: {{ cheese_details['region'] }}</li>
         {% endif %}
-        {% if cheese_details.family %}
+        {% if cheese_details.family and not cheese_details.family == 'NaN' %}
             <li>Family: {{ cheese_details['family'] }}</li>
         {% endif %}
-        {% if cheese_details.rind %}
+        {% if cheese_details.rind and not cheese_details.rind == 'NaN' %}
             <li>Rind: {{ cheese_details['rind'] }}</li>
         {% endif %}
-        {% if cheese_details.milk %}
+        {% if cheese_details.milk and not cheese_details.milk == 'NaN' %}
             <li>Milk: {{ cheese_details['milk'] }}</li>
         {% endif %}
-        {% if cheese_details.fat %}
+        {% if cheese_details.fat and not cheese_details.fat == 'NaN' %}
             <li>Fat: {{ cheese_details['fat'] }}</li>
         {% endif %}
-        {% if cheese_details.kind %}
+        {% if cheese_details.kind and not cheese_details.kind == 'NaN' %}
             <li>Kind: {{ cheese_details['kind'] }}</li>
         {% endif %}
-        {% if cheese_details.description %}
+        {% if cheese_details.description and not cheese_details.description == 'NaN' %}
             <li>Description: {{ cheese_details['description'] }}</li>
         {% endif %}
-        {% if cheese_details.producer %}
+        {% if cheese_details.producer and not cheese_details.producer == 'NaN' %}
             <li>Producer: {{ cheese_details['producer'] }}</li>
         {% endif %}
-        {% if cheese_details.synonyms %}
+        {% if cheese_details.synonyms and not cheese_details.synonyms == 'NaN' %}
             <li>Synonyms: {{ cheese_details['synonyms'] }}</li>
         {% endif %}
     </ul>
