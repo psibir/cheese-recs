@@ -1,0 +1,122 @@
+food,food_texture,food_flavor,compliment_flavor,bridge_flavor,contrastive_flavor,cleaving_flavor
+Marcona Almonds,Crunchy,Nutty,Sweet,Chocolate,Sour,Citrus
+Pistachios,Crunchy,Nutty,Salty,Lemon,Spicy,Mint
+Hazelnuts,Crunchy,Nutty,Chocolate,Coffee,Bitter,Sweet
+Cashews,Creamy,Nutty,Spicy,Curry,Sweet,Savory
+Walnuts,Crunchy,Nutty,Sweet,Honey,Sour,Blue Cheese
+Pecans,Crunchy,Nutty,Buttery,Vanilla,Salty,Bourbon
+Macadamia Nuts,Creamy,Nutty,Coconut,Pineapple,Salty,Sea Salt
+Candied Pecans,Crunchy,Sweet,Cinnamon,Vanilla,Salty,Blue Cheese
+Candied Walnuts,Crunchy,Sweet,Maple,Brown Sugar,Salty,Goat Cheese
+Brazil Nuts,Crunchy,Nutty,Earthy,Mushroom,Sweet,Honey
+Almond-Stuffed Olives,Soft,Briny,Garlic,Lemon,Bitter,Orange
+Castelvetrano Olives,Soft,Briny,Buttery,Herbs,Sour,Tomato
+Kalamata Olives,Soft,Briny,Feta,Lemon,Sweet,Balsamic Vinegar
+Mixed Mediterranean Olives,Soft,Briny,Herbs,Olive Oil,Bitter,Red Wine
+Caperberries,Soft,Briny,Tangy,Vinegar,Sweet,Honey Mustard
+Pickled Onions,Crunchy,Tangy,Spicy,Jalapeno,Sweet,Honey
+Cornichons,Crunchy,Tangy,Dill,Garlic,Sweet,Honey Mustard
+Pickled Garlic,Soft,Tangy,Spicy,Chili Flakes,Sweet,Balsamic Vinegar
+Pickled Radishes,Crunchy,Tangy,Earthy,Beets,Sweet,Balsamic Vinegar
+Pickled Asparagus,Crunchy,Tangy,Buttery,Lemon,Sweet,Honey
+Pickled Jalapenos,Crunchy,Tangy,Spicy,Cilantro,Sweet,Mango
+Pickled Beets,Soft,Tangy,Earthy,Goat Cheese,Sweet,Honey
+Pickled Ginger,Soft,Tangy,Spicy,Wasabi,Sweet,Honey
+Marinated Artichoke Hearts,Soft,Tangy,Lemon,Herbs,Creamy,Garlic
+Roasted Red Peppers,Soft,Smoky,Garlic,Balsamic Vinegar,Sweet,Spicy
+Grilled Eggplant,Soft,Earthy,Basil,Olive Oil,Sweet,Balsamic Vinegar
+Stuffed Grape Leaves,Tender,Savory,Lemon,Mint,Creamy,Spicy
+Hummus,Smooth,Creamy,Tahini,Olive Oil,Tangy,Spicy
+Baba Ganoush,Smooth,Smoky,Garlic,Tahini,Sweet,Spicy
+Tapenade,Chunky,Salty,Olive Oil,Capers,Sweet,Balsamic Vinegar
+Pesto,Smooth,Herbaceous,Basil,Garlic,Salty,Lemon
+Fig Jam,Smooth,Sweet,Honey,Cheese,Savory,Spicy
+Quince Paste,Smooth,Sweet,Cheese,Crackers,Salty,Spicy
+Chutney,Chunky,Sweet,Coriander,Ginger,Savory,Spicy
+Honey,Smooth,Sweet,Butter,Nuts,Salty,Sour
+Mustard,Smooth,Sharp,Honey,Vinegar,Creamy,Salty
+Caramelized Onions,Soft,Sweet,Thyme,Gruyere,Creamy,Acidic
+Smoked Salmon,Soft,Salty,Dill,Cream Cheese,Sweet,Spicy
+Prosciutto,Delicate,Salty,Melon,Arugula,Sweet,Spicy
+Salami,Delicate,Savory,Mozzarella,Red Wine,Sweet,Sour
+Capicola,Delicate,Spicy,Provolone,Arugula,Sweet,Bitter
+Coppa,Delicate,Peppery,Fontina,Cornichons,Sweet,Sour
+Bresaola,Delicate,Aged,Arugula,Parmesan,Sweet,Bitter
+Soppressata,Delicate,Garlicky,Mozzarella,Basil,Sweet,Sour
+Pepperoni,Delicate,Spicy,Mozzarella,Oregano,Sweet,Sour
+Chorizo,Spicy,Smoky,Paprika,Red Wine,Sweet,Sour
+Duck Prosciutto,Delicate,Salty,Figs,Brie,Sweet,Bitter
+Smoked Duck Breast,Delicate,Smoky,Orange,Greens,Sweet,Spicy
+Cured Ham,Delicate,Salty,Melon,Manchego,Sweet,Spicy
+Dried Figs,Chewy,Sweet,Honey,Nutty,Salty,Bitter
+Dried Apricots,Chewy,Sweet,Citrusy,Buttery,Sour,Spicy
+Dried Cherries,Chewy,Tart,Vanilla,Earthy,Sweet,Spicy
+Dried Cranberries,Chewy,Tart,Orange,Zesty,Sweet,Bitter
+Dried Mango,Chewy,Sweet,Coconut,Citrusy,Savory,Sour
+Dried Pineapple,Chewy,Sweet,Minty,Caramelized,Sour,Salty
+Dried Persimmons,Chewy,Sweet,Cinnamon,Woody,Tangy,Sour
+Dried Apple Rings,Chewy,Sweet,Caramel,Nutty,Tart,Salty
+Dried Pear Slices,Chewy,Sweet,Ginger,Earthy,Tangy,Bitter
+Dates,Chewy,Sweet,Almond,Buttery,Bitter,Sour
+Medjool Dates,Chewy,Sweet,Walnut,Caramelized,Sour,Salty
+Fresh Grapes,Crisp,Sweet,Cheese,Herbal,Sour,Bitter
+Sliced Apples,Crisp,Sweet,Peanut Butter,Cinnamon,Sour,Salty
+Sliced Pears,Crisp,Sweet,Blue Cheese,Vanilla,Tart,Bitter
+Sliced Figs,Crisp,Sweet,Prosciutto,Honey,Sour,Salty
+Honeydew Melon,Crisp,Sweet,Mint,Lime,Tangy,Sour
+Fresh Berries,Soft,Sweet,Whipped Cream,Citrusy,Sour,Salty
+Sliced Peaches,Soft,Sweet,Yogurt,Cardamom,Tart,Bitter
+Sliced Nectarines,Soft,Sweet,Basil,Honey,Tangy,Sour
+Sliced Plums,Soft,Sweet,Rosemary,Maple,Sour,Salty
+Sliced Kiwi,Soft,Sweet,Coconut Milk,Ginger,Tart,Sour
+Sliced Oranges,Soft,Sweet,Dark Chocolate,Clove,Bitter,Salty
+Sliced Grapefruit,Soft,Tart,Avocado,Mint,Sweet,Sour
+Water Crackers,Crisp,Neutral,Cream Cheese,Herbs,Salty,Bitter
+Rice Crackers,Crisp,Neutral,Soy Sauce,Sesame,Sweet,Sour
+Multigrain Crackers,Crunchy,Savory,Cheese,Herbs,Fruity,Spicy
+Seed Crackers,Crunchy,Savory,Hummus,Seeds,Sweet,Spicy
+Baguette Slices,Crusty,Neutral,Olive Oil,Butter,Bitter,Sour
+Crusty Bread,Crusty,Neutral,Dips,Melted Cheese,Sweet,Sour
+Pita Bread,Soft,Neutral,Garlic Sauce,Hummus,Spicy,Sour
+Crostini,Crunchy,Savory,Tomato Bruschetta,Olive Tapenade,Sweet,Spicy
+Sourdough Bread,Crusty,Neutral,Avocado,Smoked Salmon,Bitter,Sour
+Gluten-Free Crackers,Crunchy,Savory,Artichoke Dip,Cheese,Sweet,Sour
+Crispbread,Crunchy,Neutral,Cream Cheese,Smoked Salmon,Bitter,Sweet
+Grissini,Crunchy,Savory,Prosciutto,Hummus,Sweet,Salty
+Herbed Breadsticks,Crunchy,Savory,Cream Cheese,Feta Cheese,Sweet,Salty
+Pretzels,Crunchy,Savory,Mustard,Cheese,Sweet,Salty
+Sesame Sticks,Crunchy,Savory,Spicy Peanut Sauce,Cheese,Sweet,Salty
+Popcorn,Crunchy,Savory,Cheddar Cheese,Caramel,Sweet,Salty
+Pita Chips,Crunchy,Savory,Baba Ganoush,Hummus,Sweet,Salty
+Tortilla Chips,Crunchy,Savory,Salsa,Guacamole,Sweet,Salty
+Milk Chocolate,Smooth,Sweet,Caramel,Nuts,Bitter,Sour
+Dark Chocolate,Smooth,Bitter,Red Wine,Orange,Sweet,Salty
+Caramel,Chewy,Sweet,Vanilla Ice Cream,Apples,Salty,Bitter
+Lemon Curd,Smooth,Tangy,Shortbread Cookies,Berries,Sweet,Salty
+Apple Butter,Smooth,Sweet,Cinnamon Toast,Peanut Butter,Bitter,Sour
+Pumpkin Butter,Smooth,Sweet,Toast,Cream Cheese,Bitter,Sour
+Pumpkin Seeds,Crunchy,Savory,Salads,Dried Fruits,Sweet,Salty
+Sunflower Seeds,Crunchy,Savory,Trail Mix,Yogurt,Sweet,Salty
+Mint Chocolate,Smooth,Minty,Vanilla Ice Cream,Chocolate Chip Cookies,Sweet,Bitter
+Orange Marmalade,Smooth,Sweet,Citrus,Jasmine,Bitter,Salty
+Grape Jam,Smooth,Sweet,Creamy,Ginger,Tart,Savory
+Blueberry Jam,Smooth,Sweet,Vanilla,Mint,Sour,Salty
+Raspberries,Soft,Tart,Cream,Caramel,Bitter,Sweet
+Strawberries,Soft,Sweet,Chocolate,Basil,Sour,Spicy
+Strawberry Jam,Smooth,Sweet,Cheese,Lemon,Bitter,Salty
+Carrot,Crunchy,Sweet,Ginger,Maple,Bitter,Savory
+Broccoli,Crunchy,Bitter,Cheese,Honey,Sweet,Savory
+Cucumber,Crunchy,Crisp,Mint,Lime,Spicy,Sweet
+Cipollini Onions,Crunchy,Savory,Bacon,Balsamic Vinegar,Sweet,Salty
+Marinated Mushrooms,Soft,Savory,Herbs,Garlic,Sweet,Spicy
+Marinated Okra,Soft,Savory,Tomato,Lemon,Sweet,Salty
+Truffle Honey,Smooth,Sweet,Butter,Walnut,Salty,Bitter
+Roasted Peanuts,Crunchy,Salty,Honey,Chili,Sweet,Bitter
+Chocolate-Covered Pretzels,Crunchy,Sweet,Caramel,Sea Salt,Bitter,Savory
+Balsamic Vinegar,Smooth,Tangy,Olive Oil,Herbs,Sweet,Salty
+Salsa,Chunky,Spicy,Lime,Cilantro,Sweet,Salty
+Hot Sauce,Liquid,Spicy,Vinegar,Garlic,Sweet,Savory
+Banana,Soft,Sweet,Peanut Butter,Cinnamon,Bitter,Salty
+Sliced Pineapple,Soft,Acidic,Coconut,Mango,Sweet,Savory
+Cantaloupe,Soft,Sweet,Melon,Lemon,Bitter,Salty
+Watermelon,Soft,Sweet,Mint,Feta Cheese,Sour,Savory
