@@ -1,5 +1,14 @@
 # FOOD PAIRING RULESETS
 
+def init():
+    self.congruent_flavor_ruleset = congruent
+    
+    }
+
+def pairing_objective(pairing):
+    
+
+
 # MILK-FLAVOR RULES -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 # cow's milk - 
