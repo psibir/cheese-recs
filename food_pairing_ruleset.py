@@ -1,42 +1,44 @@
 # FOOD PAIRING RULESETS
 
-# MILK-FLAVOR RULES
+# MILK-FLAVOR RULES -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-cow's milk - 
-goat's milk -
-sheep's milk -
-buffalo's milk -
-
-
-# KIND-FLAVOR RULES
-
-soft - Sweet, Salty, Neutral, Savory, Tart, Acidic, Herbaceous, 
-semi-soft - Sweet, Vegetal, Briney, Savory, Bitter, 
-semi-hard - Nutty, Sweet, Chocolate, Briney, Tangy, Peppery, Sharp, Aged,
-hard - Nutty, Sweet, Tangy, Tart, Spicy, Garlicky, Smokey, Vegetal
-blue - Nutty, Tangy, Smokey, Aged, Briney, Chocolate, Savory
+# cow's milk - 
+# goat's milk -
+# sheep's milk -
+# buffalo's milk -
 
 
-# RIND-FLAVOR RULES
+# KIND-FLAVOR RULES -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-Washed - Savory, Smokey, Aged, Garlicky, Tangy, Nutty, Briney, Vegetal
-Bloomy - Tangy, Briney, Savory
-soft-ripened - Savory, Smokey, Aged, Garlicky, Tangy, Nutty, Briney, Vegetal
+# soft - Sweet, Salty, Neutral, Savory, Tart, Acidic, Herbaceous, 
+# semi-soft - Sweet, Vegetal, Briney, Savory, Bitter, 
+# semi-hard - Nutty, Sweet, Chocolate, Briney, Tangy, Peppery, Sharp, Aged,
+# hard - Nutty, Sweet, Tangy, Tart, Spicy, Garlicky, Smokey, Vegetal
+# blue - Nutty, Tangy, Smokey, Aged, Briney, Chocolate, Savory
+
+
+# RIND-FLAVOR RULES -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+# Washed - Savory, Smokey, Aged, Garlicky, Tangy, Nutty, Briney, Vegetal
+# Bloomy - Tangy, Briney, Savory
+# soft-ripened - Savory, Smokey, Aged, Garlicky, Tangy, Nutty, Briney, Vegetal
 
 
 
-# COMMON CHEESE HEURISTICS
+# CONGRUENT FLAVOR HEURISTICS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 if cheese.flavor == food.flavor and cheese.texture != food.texture:
     return food.food
 
 
-# COMPLIMENTARY FLAVOR RULES  
-food.complement_flavor in food.cheese.clavor
+# COMPLIMENTARY FLAVOR RULES  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+if food.complement_flavor in food.cheese.flavor:
+    return food.food
 
 
 
-# CONTRASTIVE FLAVOR RULES
+# CONTRASTIVE FLAVOR RULES-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 food_match = next((food.food for food in foods if cheese_item.flavor in food.compliment_flavor), None)
 contrastive_flavor_food = next((food.food for food in foods if food_match and food.food_flavor == food_match), None)
 
