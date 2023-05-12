@@ -6,39 +6,39 @@
     <h2>{{ cheese_details['cheese'] }}</h2>
     <h3>Cheese Details</h3>
     <ul>
-        {% if cheese_details.cheese and not cheese_details.cheese == 'NaN' %}
-            <li>Cheese: {{ cheese_details['cheese'] }}</li>
-        {% endif %}
-        {% if cheese_details.origin and not cheese_details.origin == 'NaN' %}
-            <li>Country: {{ cheese_details['origin'] }}</li>
-        {% endif %}
-        {% if cheese_details.region and not cheese_details.region == 'NaN' %}
-            <li>Region: {{ cheese_details['region'] }}</li>
-        {% endif %}
-        {% if cheese_details.family and not cheese_details.family == 'NaN' %}
-            <li>Family: {{ cheese_details['family'] }}</li>
-        {% endif %}
-        {% if cheese_details.rind and not cheese_details.rind == 'NaN' %}
-            <li>Rind: {{ cheese_details['rind'] }}</li>
-        {% endif %}
-        {% if cheese_details.milk and not cheese_details.milk == 'NaN' %}
-            <li>Milk: {{ cheese_details['milk'] }}</li>
-        {% endif %}
-        {% if cheese_details.fat and not cheese_details.fat == 'NaN' %}
-            <li>Fat: {{ cheese_details['fat'] }}</li>
-        {% endif %}
-        {% if cheese_details.kind and not cheese_details.kind == 'NaN' %}
-            <li>Kind: {{ cheese_details['kind'] }}</li>
-        {% endif %}
-        {% if cheese_details.description and not cheese_details.description == 'NaN' %}
-            <li>Description: {{ cheese_details['description'] }}</li>
-        {% endif %}
-        {% if cheese_details.producer and not cheese_details.producer == 'NaN' %}
-            <li>Producer: {{ cheese_details['producer'] }}</li>
-        {% endif %}
-        {% if cheese_details.synonyms and not cheese_details.synonyms == 'NaN' %}
-            <li>Synonyms: {{ cheese_details['synonyms'] }}</li>
-        {% endif %}
+    {% if cheese_details.cheese and not cheese_details.cheese|lower == 'nan' %}
+        <li><strong>Cheese:</strong> {{ cheese_details['cheese'] }}</li>
+    {% endif %}
+    {% if cheese_details.origin and not cheese_details.origin|lower == 'nan' %}
+        <li><strong>Country:</strong> {{ cheese_details['origin'] }}</li>
+    {% endif %}
+    {% if cheese_details.region and not cheese_details.region|lower == 'nan' %}
+        <li><strong>Region:</strong> {{ cheese_details['region'] }}</li>
+    {% endif %}
+    {% if cheese_details.family and not cheese_details.family|lower == 'nan' %}
+        <li><strong>Family:</strong> {{ cheese_details['family'] }}</li>
+    {% endif %}
+    {% if cheese_details.rind and not cheese_details.rind|lower == 'nan' %}
+        <li><strong>Rind:</strong> {{ cheese_details['rind'] }}</li>
+    {% endif %}
+    {% if cheese_details.milk and not cheese_details.milk|lower == 'nan' %}
+        <li><strong>Milk:</strong> {{ cheese_details['milk'] }}</li>
+    {% endif %}
+    {% if cheese_details.fat and not cheese_details.fat|lower == 'nan' %}
+        <li><strong>Fat:</strong> {{ cheese_details['fat'] }}</li>
+    {% endif %}
+    {% if cheese_details.kind and not cheese_details.kind|lower == 'nan' %}
+        <li><strong>Kind:</strong> {{ cheese_details['kind'] }}</li>
+    {% endif %}
+    {% if cheese_details.description and not cheese_details.description|lower == 'nan' %}
+        <li><strong>Description:</strong> {{ cheese_details['description'] }}</li>
+    {% endif %}
+    {% if cheese_details.producer and not cheese_details.producer|lower == 'nan' %}
+        <li><strong>Producer:</strong> {{ cheese_details['producer'] }}</li>
+    {% endif %}
+    {% if cheese_details.synonyms and not cheese_details.synonyms|lower == 'nan' %}
+        <li><strong>Synonyms:</strong> {{ cheese_details['synonyms'] }}</li>
+    {% endif %}    
     </ul>
     <a href="javascript:history.back()">Back to Recommendations</a>
 {% endblock %}
