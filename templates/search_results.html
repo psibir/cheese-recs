@@ -1,11 +1,6 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 
-<html>
-<head>
-    <title>Search Results</title>
-</head>
-<body>
+{% block content %}
     <h1>Search Results</h1>
     {% if results %}
         <ul>
@@ -18,5 +13,4 @@
     {% else %}
         <p>No results found.</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
