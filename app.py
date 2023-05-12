@@ -67,7 +67,7 @@ def about():
 
 @app.route('/faq')
 def about():
-    return render_template('.html')
+    return render_template('FAQ.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
