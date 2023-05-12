@@ -19,6 +19,68 @@ The `CheeseRecommender` class initializes with a file path for a tab-separated v
 
 The `get_recommendations` method takes in user input, number of recommendations, starting index, and a list of words to exclude from the recommendation. If the user does not provide any input or exclusion words, the method generates a random sample of cheese recommendations. If the user provides input, the user's input is transformed into a vector using the same TfidfVectorizer used on the cheese descriptions, and the cosine similarity between the user input vector and the cheese matrix is calculated. The method returns the top recommendations with the highest cosine similarity scores. If exclude words are provided, the method removes any cheeses containing the excluded words from the recommendations.
 
+### Local Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/psibir/chz-recs.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```
+   cd cheese-recommender
+   ```
+
+3. Create a virtual environment (optional but recommended):
+
+   ```
+   python3 -m .venv venv
+   ```
+
+4. Activate the virtual environment:
+
+   - For macOS/Linux:
+
+     ```
+     source .venv/bin/activate
+     ```
+
+   - For Windows:
+
+     ```
+     venv\Scripts\activate
+     ```
+
+5. Install the required dependencies:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+6. Run the application:
+
+   ```
+   python app.py
+   ```
+
+7. Open a web browser and visit `http://localhost:8080` to access the Cheese Recommender.
+
+### Usage
+
+- **Home Page**: The home page displays a form where you can enter user preferences for cheese recommendations. Fill in the required fields and click the "Submit" button to get personalized recommendations.
+
+- **Results Page**: After submitting the form on the home page, you will be redirected to the results page, which shows a list of recommended cheeses based on your preferences. Click on a cheese name to view more details about that cheese.
+
+- **Cheese Details**: The cheese details page provides information about a specific cheese. It includes details such as the cheese name, country of origin, region, family, rind type, milk type, fat content, kind, description, producer, and synonyms.
+
+- **Cheese Library**: The website also includes a full database of over 1800 cheeses available so you can find your favorites on your own.
+
+### Contributing
+
+Contributions to the Cheese Recommender project are welcome! If you find any issues or have suggestions for improvements, please submit a pull request or open an issue on the project's GitHub repository.
+
 ## License
 
 This project is licensed under the MIT License. Feel free to use and modify it for your own purposes.
