@@ -1,15 +1,9 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 
-<html>
-<head>
-    <title>Search Cheese Database</title>
-</head>
-<body>
+{% block content %}
     <h1>Search</h1>
     <form action="/search" method="POST">
         <input type="text" name="query" placeholder="Enter your search query">
         <button type="submit">Search</button>
     </form>
-</body>
-</html>
+{% endblock %}
