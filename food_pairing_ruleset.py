@@ -41,7 +41,7 @@ if cheese.flavor == food.flavor and cheese.texture != food.texture:
 
 
 # COMPLIMENTARY FLAVOR RULES  -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-if food.complement_flavor in food.cheese.flavor:
+if food.complement_flavor in food.cheese.flavor and (food.bridge_flavor in (cheese.flavor or cheese.aroma or cheese.texture)):
     return food.food
 
 

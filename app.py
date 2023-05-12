@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from cheese_recommender import CheeseRecommender
+import search
 
 app = Flask(__name__)
 
@@ -50,9 +51,23 @@ def cheese_details(index):
     return render_template('cheese_details.html', cheese_details=cheese_details)
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        query = request.form.get('query')
+        results = search(query)
+        return render_template('search_results.html', results=results)
+    
+    return render_template('search_form.html')
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
