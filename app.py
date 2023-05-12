@@ -75,7 +75,7 @@ def faq():
 
 @app.route('/cheese_library')
 def cheese_library():
-    cheeses = recommender.get_all_cheeses()
+    cheeses = recommender.get_all_cheeses(cheese_file)
     return render_template('cheese_library.html', cheeses=cheeses)
 
 if __name__ == '__main__':
