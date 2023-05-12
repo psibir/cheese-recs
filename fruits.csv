@@ -1,4 +1,3 @@
-Table 1
 fruit,fruit_pairing,herbspice_pairing,nut_pairing,spirit_pairing,misc_pairing
 Apple,"Apricot, blackberry, cherry, cranberry, currant, date, lychee, mango, orange, pear, pineapple, plum, pomegranate, pumpkin, quince","Allspice, cardamom, cinnamon, cloves, coriander, cumin, ginger, nutmeg, rosemary, star anise, thyme","Almond, chestnut, hazelnut, pecan, pine nut, pistachio, walnut","Armagnac, bourbon, brandy, calvados, cognac, Cointreau, Kirsch, Madeira, rum, sherry, vermouth","Caramel, maple syrup, molasses, vanilla"
 Apricot,"Apple, banana, blackberry, blueberry, cherry, coconut, cranberry, lemon, orange, peach, pineapple, plum, prune, raspberry, strawberry","Cardamom, cayenne, cinnamon, coriander, ginger, nutmeg, rosemary, saffron","Almond, hazelnut, pine nut, pistachio, walnut","Amaretto, brandy, cognac, Kirsch, orange liqueur, rum","Caramel, honey, maple syrup, mascarpone, vanilla"

@@ -32,6 +32,31 @@ def pairing_objective(pairing):
 # Bloomy - Tangy, Briney, Savory
 # soft-ripened - Savory, Smokey, Aged, Garlicky, Tangy, Nutty, Briney, Vegetal
 
+def __init__(self, cheese, rind, food, food_flavor):
+    self.cheese.rind = rind
+    self.food.food_flavor = food_flavor
+    
+
+
+if rind == "Washed":
+    if ["Savory", "Smokey", "Aged", "Garlicky", "Tangy", "Nutty", "Briney", "Vegetal"] in food_flavor:
+        # Pair the cheese with the food
+        print("Pair the Washed rind cheese with the food.")
+
+elif cheese_rind == "Bloomy":
+    if food_flavor in ["Tangy", "Briney", "Savory"]:
+        # Pair the cheese with the food
+        print("Pair the Bloomy rind cheese with the food.")
+
+elif cheese_rind == "soft-ripened":
+    if food_flavor in ["Savory", "Smokey", "Aged", "Garlicky", "Tangy", "Nutty", "Briney", "Vegetal"]:
+        # Pair the cheese with the food
+        print("Pair the soft-ripened cheese with the food.")
+
+else:
+    # No specific pairing recommendation for the given cheese rind
+    print("No specific pairing recommendation for this cheese rind.")
+
 
 
 # CONGRUENT FLAVOR HEURISTICS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
