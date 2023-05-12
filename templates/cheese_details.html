@@ -9,6 +9,9 @@
     {% if cheese_details.cheese and not cheese_details.cheese|lower == 'nan' %}
         <li><strong>Cheese:</strong> {{ cheese_details['cheese'] }}</li>
     {% endif %}
+    {% if cheese_details.milk and not cheese_details.milk|lower == 'nan' %}
+        <li><strong>Milk:</strong> {{ cheese_details['milk'] }}</li>
+    {% endif %}
     {% if cheese_details.origin and not cheese_details.origin|lower == 'nan' %}
         <li><strong>Country:</strong> {{ cheese_details['origin'] }}</li>
     {% endif %}
@@ -18,27 +21,39 @@
     {% if cheese_details.family and not cheese_details.family|lower == 'nan' %}
         <li><strong>Family:</strong> {{ cheese_details['family'] }}</li>
     {% endif %}
-    {% if cheese_details.rind and not cheese_details.rind|lower == 'nan' %}
-        <li><strong>Rind:</strong> {{ cheese_details['rind'] }}</li>
-    {% endif %}
-    {% if cheese_details.milk and not cheese_details.milk|lower == 'nan' %}
-        <li><strong>Milk:</strong> {{ cheese_details['milk'] }}</li>
+    {% if cheese_details.kind and not cheese_details.kind|lower == 'nan' %}
+        <li><strong>Kind:</strong> {{ cheese_details['kind'] }}</li>
     {% endif %}
     {% if cheese_details.fat and not cheese_details.fat|lower == 'nan' %}
         <li><strong>Fat:</strong> {{ cheese_details['fat'] }}</li>
     {% endif %}
-    {% if cheese_details.kind and not cheese_details.kind|lower == 'nan' %}
-        <li><strong>Kind:</strong> {{ cheese_details['kind'] }}</li>
+    {% if cheese_details.calcium and not cheese_details.calcium|lower == 'nan' %}
+        <li><strong>Calcium:</strong> {{ cheese_details['calcium'] }}</li>
     {% endif %}
-    {% if cheese_details.description and not cheese_details.description|lower == 'nan' %}
-        <li><strong>Description:</strong> {{ cheese_details['description'] }}</li>
+    {% if cheese_details.rind and not cheese_details.rind|lower == 'nan' %}
+        <li><strong>Rind:</strong> {{ cheese_details['rind'] }}</li>
+    {% endif %}
+    {% if cheese_details.texture and not cheese_details.texture|lower == 'nan' %}
+        <li><strong>Texture:</strong> {{ cheese_details['texture'] }}</li>
+    {% endif %}
+    {% if cheese_details.color and not cheese_details.color|lower == 'nan' %}
+        <li><strong>Color:</strong> {{ cheese_details['color'] }}</li>
+    {% endif %}
+    {% if cheese_details.flavor and not cheese_details.flavor|lower == 'nan' %}
+        <li><strong>Flavor:</strong> {{ cheese_details['flavor'] }}</li>
+    {% endif %}
+    {% if cheese_details.aroma and not cheese_details.aroma|lower == 'nan' %}
+        <li><strong>Aroma:</strong> {{ cheese_details['aroma'] }}</li>
     {% endif %}
     {% if cheese_details.producer and not cheese_details.producer|lower == 'nan' %}
         <li><strong>Producer:</strong> {{ cheese_details['producer'] }}</li>
     {% endif %}
     {% if cheese_details.synonyms and not cheese_details.synonyms|lower == 'nan' %}
         <li><strong>Synonyms:</strong> {{ cheese_details['synonyms'] }}</li>
-    {% endif %}    
+    {% endif %}
+    {% if cheese_details.alternative_spellings and not cheese_details.alternative_spellings|lower == 'nan' %}
+        <li><strong>Alternative Spellings:</strong> {{ cheese_details['alternative_spellings'] }}</li>
+    {% endif %}
     </ul>
     <a href="javascript:history.back()">Back to Recommendations</a>
 {% endblock %}

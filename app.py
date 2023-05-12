@@ -9,7 +9,17 @@ recommender = CheeseRecommender(cheese_file)
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html'),
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('500.html'), 500
+
+@app.errorhandler(501)
+def not_implemented_error(error):
+    return render_template('501.html'), 501
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -39,16 +49,23 @@ def cheese_details(index):
     cheese = recommender.df.iloc[index]
     cheese_details = {
         'cheese': cheese['cheese'],
-        'country': cheese['origin'],
+        'milk': cheese['milk'],
+        'origin': cheese['origin'],
         'region': cheese['region'],
         'family': cheese['family'],
-        'rind': cheese['rind'],
-        'milk': cheese['milk'],
-        'fat': cheese['fat'],
         'kind': cheese['kind'],
-        'description': cheese['description'],
+        'fat': cheese['fat'],
+        'calcium': cheese['calcium'],
+        'rind': cheese['rind'],
+        'texture': cheese['texture'],
+        'color': cheese['color'],
+        'flavor': cheese['flavor'],
+        'aroma': cheese['aroma'],
         'producer': cheese['producer'],
-        'synonyms': cheese['synonyms']
+        'synonyms': cheese['synonyms'],
+        'alternative_spellings': cheese['alternative_spellings'],
+        'vegetarian': cheese['vegetarian'],
+        'description': cheese['description']
     }
 
     # Render the cheese details template
