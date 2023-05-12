@@ -4,7 +4,7 @@
     <h1>Cheese Library</h1>
     <ul>
         {% for cheese in cheeses %}
-            <li><a href="/cheese/{{ loop.index }}">{{ cheese }}</a></li>
+            <li><a href="/cheese/{{ loop.index0 }}">{{ cheese }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
