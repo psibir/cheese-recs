@@ -41,3 +41,7 @@ class CheeseRecommender:
             recommendations = pd.DataFrame(filtered_recommendations)
 
         return recommendations
+
+    def get_all_cheeses(self):
+        return self.df['cheese'].tolist()
+    

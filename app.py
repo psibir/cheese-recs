@@ -51,14 +51,14 @@ def cheese_details(index):
     return render_template('cheese_details.html', cheese_details=cheese_details)
 
 
-# @app.route('/search', methods=['GET', 'POST'])
-# def search():
-#     if request.method == 'POST':
-#         query = request.form.get('query')
-#         results = search(query)
-#         return render_template('search_results.html', results=results)
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        query = request.form.get('query')
+        results = search(query)
+        return render_template('search_results.html', results=results)
     
-#     return render_template('search_form.html')
+    return render_template('search_form.html')
 
 
 @app.route('/about')
@@ -68,6 +68,11 @@ def about():
 @app.route('/FAQ')
 def faq():
     return render_template('FAQ.html')
+
+@app.route('/cheese-library')
+def cheese_library():
+    cheeses = recommender.get_all_cheeses()
+    return render_template('cheese_library.html', cheeses=cheeses)
 
 @app.errorhandler(404)
 def page_not_found(error):
