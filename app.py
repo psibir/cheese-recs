@@ -65,7 +65,7 @@ def cheese_details(index):
 def about():
     return render_template('about.html')
 
-@app.route('/faq')
+@app.route('/FAQ')
 def faq():
     return render_template('FAQ.html')
 
