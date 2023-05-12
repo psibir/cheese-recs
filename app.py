@@ -7,6 +7,10 @@ app = Flask(__name__)
 cheese_file = 'cheeses_tab.tsv'
 recommender = CheeseRecommender(cheese_file)
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'),
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -73,11 +77,6 @@ def faq():
 def cheese_library():
     cheeses = recommender.get_all_cheeses()
     return render_template('cheese_library.html', cheeses=cheeses)
-
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'),
-
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
