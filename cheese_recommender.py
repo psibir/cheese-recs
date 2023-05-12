@@ -42,6 +42,8 @@ class CheeseRecommender:
 
         return recommendations
 
-    def get_all_cheeses(self):
-        return self.df['cheese'].tolist()
+    @classmethod
+    def get_all_cheeses(cls, cheese_file):
+        df = pd.read_csv(cheese_file, sep='\t')
+        return df['cheese'].tolist()
     

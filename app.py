@@ -69,7 +69,7 @@ def about():
 def faq():
     return render_template('FAQ.html')
 
-@app.route('/cheese-library')
+@app.route('/cheese_library')
 def cheese_library():
     cheeses = recommender.get_all_cheeses()
     return render_template('cheese_library.html', cheeses=cheeses)
