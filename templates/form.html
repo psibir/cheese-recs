@@ -1,13 +1,44 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cheese Recommender - Index</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-{% block title %}Cheese Recommender - Index{% endblock %}
+        input[type="text"],
+        input[type="submit"] {
+            margin-bottom: 10px;
+        }
 
-{% block content %}
+        #flavorwheel {
+            display: none;
+            margin-top: 10px;
+        }
+
+        #help-link {
+            display: block;
+            margin-top: 10px;
+        }
+
+        #help-link:hover + #flavorwheel {
+            display: block;
+        }
+    </style>
+</head>
+<body>
     <form method="POST" action="/">
         <label for="user_input">What qualities do you like in cheese?</label>
         <input type="text" name="user_input" id="user_input"><br><br>
-        <label for="exclude_words">What qualities you do not want in your cheese?:</label>
+        <label for="exclude_words">What qualities do you not like in your cheese?</label>
         <input type="text" name="exclude_words" id="exclude_words"><br><br>
         <input type="submit" value="Get Recommendations">
     </form>
-{% endblock %}
+    <a href="#" id="help-link">Need Help?</a>
+    <div id="flavorwheel">
+        <img src="img/flavorwheel.png" alt="Flavor Wheel">
+    </div>
+</body>
+</html>
