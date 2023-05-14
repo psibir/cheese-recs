@@ -13,17 +13,20 @@
 
     <a href="#" id="help-link">Need Help?</a>
     <div id="flavor-wheel-container" style="display: none;">
-        <img src="/static/flavorwheel.png" alt="Flavor Wheel">
+        <img id="flavor-wheel-image" src="/static/flavorwheel.png" alt="Flavor Wheel">
     </div>
 
     <script>
         const helpLink = document.getElementById('help-link');
         const flavorWheelContainer = document.getElementById('flavor-wheel-container');
+        const flavorWheelImage = document.getElementById('flavor-wheel-image');
 
         helpLink.addEventListener('click', function(event) {
             event.preventDefault();
             if (flavorWheelContainer.style.display === 'none') {
                 flavorWheelContainer.style.display = 'block';
+                flavorWheelImage.style.maxWidth = '100%'; // Set maximum width to fill container
+                flavorWheelImage.style.height = 'auto'; // Maintain aspect ratio
             } else {
                 flavorWheelContainer.style.display = 'none';
             }
