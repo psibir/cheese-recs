@@ -28,7 +28,7 @@ def index():
         exclude_words = request.form.get('exclude_words')
         if exclude_words:
             exclude_words = exclude_words.strip().split()
-        num_recommendations = 15
+        num_recommendations = None  # Set to None to get all recommendations
         start_index = 0
         
         if not user_input and not exclude_words:
