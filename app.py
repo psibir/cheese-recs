@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from cheese_recommender import CheeseRecommender
-import search
 
 app = Flask(__name__)
 
@@ -18,8 +17,6 @@ def internal_server_error(error):
 @app.errorhandler(501)
 def not_implemented_error(error):
     return render_template('501.html'), 501
-
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -41,7 +38,6 @@ def index():
         return render_template('results.html', recommendations=recommendations, cheese_details=cheese_details)
     else:
         return render_template('form.html')
-
 
 @app.route('/cheese/<int:index>')
 def cheese_details(index):
@@ -70,7 +66,6 @@ def cheese_details(index):
 
     # Render the cheese details template
     return render_template('cheese_details.html', cheese_details=cheese_details)
-
 
 @app.route('/about')
 def about():

@@ -1,19 +1,8 @@
-<!-- food pairing user form-->
+{% extends 'base.html' %}
 
+{% block title %}Cheese Pairing{% endblock %}
 
-<!-- what cheese woud you like to pair with food?
-
-what aspect of flavor would you like to accentuate?
-
-what food would you like to pair with cheese? -->
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cheese Pairing</title>
-</head>
-<body>
+{% block content %}
     <h1>Cheese Pairing</h1>
     <form>
         <label for="cheese">What cheese would you like to pair with food?</label><br>
@@ -27,5 +16,5 @@ what food would you like to pair with cheese? -->
         
         <input type="submit" value="Get Pairing">
     </form>
-</body>
-</html>
+{% endblock %}
+
