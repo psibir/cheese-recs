@@ -1,34 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cheese Recommender - Index</title>
-    <style>
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
+{% extends 'base.html' %}
 
-        input[type="text"],
-        input[type="submit"] {
-            margin-bottom: 10px;
-        }
+{% block title %}Cheese Recommender{% endblock %}
 
-        #flavorwheel {
-            display: none;
-            margin-top: 10px;
-        }
-
-        #help-link {
-            display: block;
-            margin-top: 10px;
-        }
-
-        #help-link:hover + #flavorwheel {
-            display: block;
-        }
-    </style>
-</head>
-<body>
+{% block content %}
     <form method="POST" action="/">
         <label for="user_input">What qualities do you like in cheese?</label>
         <input type="text" name="user_input" id="user_input"><br><br>
@@ -36,9 +10,23 @@
         <input type="text" name="exclude_words" id="exclude_words"><br><br>
         <input type="submit" value="Get Recommendations">
     </form>
+
     <a href="#" id="help-link">Need Help?</a>
-    <div id="flavorwheel">
+    <div id="flavor-wheel-container" style="display: none;">
         <img src="img/flavorwheel.png" alt="Flavor Wheel">
     </div>
-</body>
-</html>
+
+    <script>
+        const helpLink = document.getElementById('help-link');
+        const flavorWheelContainer = document.getElementById('flavor-wheel-container');
+
+        helpLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (flavorWheelContainer.style.display === 'none') {
+                flavorWheelContainer.style.display = 'block';
+            } else {
+                flavorWheelContainer.style.display = 'none';
+            }
+        });
+    </script>
+{% endblock %}
