@@ -20,7 +20,6 @@ def not_implemented_error(error):
     return render_template('501.html'), 501
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -28,19 +27,23 @@ def index():
         exclude_words = request.form.get('exclude_words')
         if exclude_words:
             exclude_words = exclude_words.strip().split()
-        num_recommendations = None  # Set to None to get all recommendations
-        start_index = 0
+        
+        # Pagination variables
+        page = request.args.get('page', default=1, type=int)
+        per_page = 15
+        start_index = (page - 1) * per_page
         
         if not user_input and not exclude_words:
-            recommendations = recommender.get_recommendations()
+            recommendations = recommender.get_recommendations(start_index=start_index, num_recommendations=per_page)
             cheese_details = None
         else:
-            recommendations = recommender.get_recommendations(user_input=user_input, num_recommendations=num_recommendations, start_index=start_index, exclude_words=exclude_words)
+            recommendations = recommender.get_recommendations(user_input=user_input, num_recommendations=per_page, start_index=start_index, exclude_words=exclude_words)
             cheese_details = None  # Placeholder for selected cheese details
         
         return render_template('results.html', recommendations=recommendations, cheese_details=cheese_details)
     else:
         return render_template('form.html')
+
 
 
 @app.route('/cheese/<int:index>')
