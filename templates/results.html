@@ -27,6 +27,18 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        {% if recommendations|length > per_page %}
+            <div class="pagination">
+                {% if page > 1 %}
+                    <a href="?page={{ page - 1 }}">Previous</a>
+                {% endif %}
+                {% if page * per_page < recommendations|length %}
+                    <a href="?page={{ page + 1 }}">Next</a>
+                {% endif %}
+            </div>
+        {% endif %}
+
     {% else %}
         <p>No recommendations available.</p>
     {% endif %}
