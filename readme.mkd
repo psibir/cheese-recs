@@ -30,10 +30,10 @@ The `get_recommendations` method takes in user input, number of recommendations,
 2. Navigate to the project directory:
 
    ```
-   cd cheese-recommender
+   cd chz-recs
    ```
 
-3. Create a virtual environment (optional but recommended):
+3. Create a virtual environment:
 
    ```
    python3 -m .venv venv
@@ -62,7 +62,7 @@ The `get_recommendations` method takes in user input, number of recommendations,
 6. Run the application:
 
    ```
-   python app.py
+   python3 app.py
    ```
 
 7. Open a web browser and visit `http://localhost:8080` to access the Cheese Recommender.
