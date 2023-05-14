@@ -4,7 +4,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 import random
 
 
-
 class CheeseRecommender:
     def __init__(self, cheese_file):
         self.df = pd.read_csv(cheese_file, sep='\t')
@@ -40,10 +39,12 @@ class CheeseRecommender:
                     filtered_recommendations.append(row)
             recommendations = pd.DataFrame(filtered_recommendations)
 
+        if recommendations.empty:
+            return "No recommendations available"
+        
         return recommendations
 
     @classmethod
     def get_all_cheeses(cls, cheese_file):
         df = pd.read_csv(cheese_file, sep='\t')
         return df['cheese'].tolist()
-    
