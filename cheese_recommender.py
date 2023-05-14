@@ -9,7 +9,7 @@ class CheeseRecommender:
         self.df = pd.read_csv(cheese_file, sep='\t')
         self.vectorizer = TfidfVectorizer()
 
-    def get_recommendations(self, user_input=None, num_recommendations=5, start_index=0, exclude_words=None):
+    def get_recommendations(self, user_input=None, num_recommendations=50, start_index=0, exclude_words=None):
         self.df.fillna('', inplace=True)
         cheese_desc = self.df.apply(lambda x: ' '.join(x), axis=1)
         cheese_matrix = self.vectorizer.fit_transform(cheese_desc)
@@ -39,7 +39,7 @@ class CheeseRecommender:
                     filtered_recommendations.append(row)
             recommendations = pd.DataFrame(filtered_recommendations)
 
-        if recommendations.empty:
+        if recommendations.empty or (user_input and recommendations['cheese'].nunique() == 0):
             return "No recommendations available"
         
         return recommendations
