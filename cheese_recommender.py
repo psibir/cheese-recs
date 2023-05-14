@@ -14,6 +14,12 @@ class CheeseRecommender:
         cheese_desc = self.df.apply(lambda x: ' '.join(x), axis=1)
         cheese_matrix = self.vectorizer.fit_transform(cheese_desc)
 
+        if user_input and user_input not in self.df.values:
+            return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
+
+        if exclude_words and not any(word in self.df.values for word in exclude_words):
+            return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
+
         if user_input is None:
             sim_indices = random.sample(range(len(self.df)), num_recommendations)
         else:
