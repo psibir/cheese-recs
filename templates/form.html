@@ -5,26 +5,32 @@
 {% block content %}
     <form method="POST" action="/">
         <label for="user_input">What qualities do you like in cheese?</label>
-        <input type="text" name="user_input" id="user_input"><br><br>
+        <input type="text" name="user_input" id="user_input" placeholder="e.g. sheep nutty"><br><br>
         <label for="exclude_words">What qualities do you not like in your cheese?</label>
-        <input type="text" name="exclude_words" id="exclude_words"><br><br>
+        <input type="text" name="exclude_words" id="exclude_words" placeholder="grassy"><br><br>
         <input type="submit" value="Get Recommendations">
     </form>
+ß
 
     <a href="#" id="help-link">Need Help?</a>
     <div id="flavor-wheel-container" style="display: none;">
         <p>Having difficulty identifying flavors? Use this flavor wheel to pinpoint what qualities you like!</p>
-        <img src="/static/flavorwheel.png" alt="Flavor Wheel">
+        <p>If you ask for recomendations without entering any qualities, you will get random recommendations.</p>
+        <p>You can also check out the [FAQ page](/faq).</p>
+        <img id="flavor-wheel-image" src="/static/flavorwheel.png" alt="Flavor Wheel">
     </div>
 
     <script>
         const helpLink = document.getElementById('help-link');
         const flavorWheelContainer = document.getElementById('flavor-wheel-container');
+        const flavorWheelImage = document.getElementById('flavor-wheel-image');
 
         helpLink.addEventListener('click', function(event) {
             event.preventDefault();
             if (flavorWheelContainer.style.display === 'none') {
                 flavorWheelContainer.style.display = 'block';
+                flavorWheelImage.style.maxWidth = '100%'; // Set maximum width to fill container
+                flavorWheelImage.style.height = 'auto'; // Maintain aspect ratio
             } else {
                 flavorWheelContainer.style.display = 'none';
             }
