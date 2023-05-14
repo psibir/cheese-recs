@@ -35,9 +35,13 @@ def index():
             recommendations = recommender.get_recommendations(user_input=user_input, num_recommendations=num_recommendations, start_index=start_index, exclude_words=exclude_words)
             cheese_details = None  # Placeholder for selected cheese details
         
-        return render_template('results.html', recommendations=recommendations, cheese_details=cheese_details)
+        if recommendations.empty:
+            return render_template('no_results.html')
+        else:
+            return render_template('results.html', recommendations=recommendations, cheese_details=cheese_details)
     else:
         return render_template('form.html')
+
 
 @app.route('/cheese/<int:index>')
 def cheese_details(index):
