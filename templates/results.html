@@ -28,7 +28,7 @@
             </tbody>
         </table>
     {% else %}
-        <p>No recommendations available.</p>
+        {% include 'no_results.html' %}
     {% endif %}
 
     {% if cheese_details %}
