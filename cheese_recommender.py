@@ -14,9 +14,6 @@ class CheeseRecommender:
         cheese_desc = self.df.apply(lambda x: ' '.join(x), axis=1)
         cheese_matrix = self.vectorizer.fit_transform(cheese_desc)
 
-        if user_input is None or user_input not in self.df['cheese'].values:
-            return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
-
         user_vector = self.vectorizer.transform([user_input])
         sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
         sim_indices = sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
