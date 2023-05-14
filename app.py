@@ -29,15 +29,19 @@ def index():
         start_index = 0
         
         if not user_input and not exclude_words:
-            recommendations = recommender.get_recommendations()
+            recommendations = []
             cheese_details = None
         else:
             recommendations = recommender.get_recommendations(user_input=user_input, num_recommendations=num_recommendations, start_index=start_index, exclude_words=exclude_words)
             cheese_details = None  # Placeholder for selected cheese details
         
-        return render_template('results.html', recommendations=recommendations, cheese_details=cheese_details)
+        if not recommendations:
+            return render_template('no_results.html')  # Display a separate template for no recommendations
+        else:
+            return render_template('results.html', recommendations=recommendations, cheese_details=cheese_details)
     else:
         return render_template('form.html')
+
 
 @app.route('/cheese/<int:index>')
 def cheese_details(index):
