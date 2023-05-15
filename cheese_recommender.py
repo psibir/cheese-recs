@@ -17,9 +17,11 @@ class CheeseRecommender:
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
         user_input_modified = ' '.join(user_input.split())
-        user_vector = self.vectorizer.transform([user_input_modified])
-        sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
-        sim_indices = sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
+        user_words = user_input_modified.split()
+        user_vectors = self.vectorizer.transform(user_words)
+        sim_scores = cosine_similarity(user_vectors, cheese_matrix)
+        avg_sim_scores = sim_scores.mean(axis=0)
+        sim_indices = avg_sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
 
         recommendations = self.df.iloc[sim_indices][
             ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer']]
