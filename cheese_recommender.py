@@ -4,7 +4,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from fuzzywuzzy import fuzz
 import random
 
-
 class CheeseRecommender:
     def __init__(self, cheese_file):
         self.df = pd.read_csv(cheese_file, sep='\t')
@@ -18,6 +17,8 @@ class CheeseRecommender:
         if user_input is None or not self._is_significant_match(user_input, self.df['cheese']):
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
+        user_input_list = user_input.split()
+        user_input = ' '.join(user_input_list)
         user_vector = self.vectorizer.transform([user_input])
         sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
         sim_indices = sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
