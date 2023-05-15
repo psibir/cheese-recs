@@ -32,7 +32,7 @@ class CheesePairing:
     def __init__(self, cheese_name):
         self.cheese_name = cheese_name
         self.cheeses = self.read_cheeses('cheeses_tab.tsv')
-        self.foods = self.read_foods('Foods.csv')
+        self.foods = self.read_foods('foods.csv')
         self.pairings = self.get_cheese_pairings()
 
     def read_cheeses(self, file):
@@ -70,7 +70,7 @@ class CheesePairing:
         return pairings
 
 # Usage example
-cheese_pairing = CheesePairing('cheeses_tab.tsv', 'Foods.csv')
+cheese_pairing = CheesePairing('cheeses_tab.tsv', 'foods.csv')
 user_input = input("What cheese would you like to pair with food? ")
 pairings = cheese_pairing.pair_cheese_with_food(user_input)
 for pairing in pairings:

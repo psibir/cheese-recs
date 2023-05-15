@@ -5,16 +5,50 @@
 {% block content %}
     <h1>Cheese Pairing</h1>
     <form>
-        <label for="cheese">What cheese would you like to pair with food?</label><br>
-        <input type="text" id="cheese" name="cheese"><br><br>
-        
-        <label for="flavor">What aspect of flavor would you like to accentuate?</label><br>
-        <input type="text" id="flavor" name="flavor"><br><br>
-        
-        <label for="food">What food would you like to pair with cheese?</label><br>
-        <input type="text" id="food" name="food"><br><br>
-        
+        <label>
+            <input type="radio" name="pairing_type" value="cheese_food" checked>
+            Pair cheese with a food to accentuate a flavor
+        </label><br><br>
+
+        <label>
+            <input type="radio" name="pairing_type" value="food_cheese">
+            Pair a food with cheese to accentuate a flavor
+        </label><br><br>
+
+        <div id="cheese-food-pairing" style="display: block;">
+            <label for="cheese">What cheese would you like to pair with food?</label><br>
+            <input type="text" id="cheese" name="cheese"><br><br>
+
+            <label for="flavor">What aspect of flavor would you like to accentuate?</label><br>
+            <input type="text" id="flavor" name="flavor"><br><br>
+        </div>
+
+        <div id="food-cheese-pairing" style="display: none;">
+            <label for="food">What food would you like to pair with cheese?</label><br>
+            <input type="text" id="food" name="food"><br><br>
+
+            <label for="accentuate_flavor">What aspect of flavor would you like to accentuate?</label><br>
+            <input type="text" id="accentuate_flavor" name="accentuate_flavor"><br><br>
+        </div>
+
         <input type="submit" value="Get Pairing">
     </form>
-{% endblock %}
 
+    <script>
+        const pairingTypeRadio = document.getElementsByName('pairing_type');
+        const cheeseFoodPairing = document.getElementById('cheese-food-pairing');
+        const foodCheesePairing = document.getElementById('food-cheese-pairing');
+
+        for (let i = 0; i < pairingTypeRadio.length; i++) {
+            pairingTypeRadio[i].addEventListener('change', function() {
+                if (pairingTypeRadio[i].value === 'cheese_food') {
+                    cheeseFoodPairing.style.display = 'block';
+                    foodCheesePairing.style.display = 'none';
+                } else {
+                    cheeseFoodPairing.style.display = 'none';
+                    foodCheesePairing.style.display = 'block';
+                }
+            });
+        }
+    </script>
+{% endblock %}
