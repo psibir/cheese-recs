@@ -12,7 +12,7 @@ class CheeseRecommender:
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
         words = user_input.split()
-        cheese_columns = ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer']
+        cheese_columns = ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'producer']
         if not any(any(word in str(val).lower() for val in self.df[col]) for word in words for col in cheese_columns):
             return pd.DataFrame(columns=cheese_columns)
 
