@@ -22,7 +22,17 @@ class CheeseRecommender:
 
         user_vector = self.vectorizer.transform([user_input])
         sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
-        sim_indices = sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
+        sim_indices = sim_scores.argsort()[::-1]
+
+        # filter out recommendations that do not include the user input if there are less than num_recommendations that contain the user input
+        filtered_indices = []
+        for i in sim_indices:
+            row = self.df.iloc[i][cheese_columns]
+            if any(word in str(val).lower() for val in row.values for word in words):
+                filtered_indices.append(i)
+                if len(filtered_indices) == num_recommendations:
+                    break
+        sim_indices = filtered_indices[start_index:start_index+num_recommendations]
 
         recommendations = self.df.iloc[sim_indices][cheese_columns]
         recommendations['origin'] = recommendations['origin'].str.split(',').str[0]
