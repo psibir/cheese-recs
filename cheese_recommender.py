@@ -16,12 +16,15 @@ class CheeseRecommender:
         if user_input is None or not self._is_significant_match(user_input, self.df['cheese']):
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
-        user_input_modified = ' '.join(user_input.split())
-        user_words = user_input_modified.split()
-        user_vectors = self.vectorizer.transform(user_words)
-        sim_scores = cosine_similarity(user_vectors, cheese_matrix)
-        avg_sim_scores = sim_scores.mean(axis=0)
-        sim_indices = avg_sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
+        user_words = user_input.split()
+        total_scores = []
+        for word in user_words:
+            user_vector = self.vectorizer.transform([word])
+            sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
+            total_scores.append(sim_scores)
+
+        averaged_scores = sum(total_scores) / len(user_words)
+        sim_indices = averaged_scores.argsort()[::-1][start_index:num_recommendations + start_index]
 
         recommendations = self.df.iloc[sim_indices][
             ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer']]
@@ -45,11 +48,12 @@ class CheeseRecommender:
 
         return recommendations
 
-    def _is_significant_match(self, user_input, choices, threshold=50):
+    def _is_significant_match(self, user_input, choices, threshold=70):
         words = user_input.split()
         for choice in choices:
-            match_count = sum(fuzz.token_set_ratio(word, choice) >= threshold for word in words)
-            if match_count == len(words):
+            match_scores = [fuzz.token_set_ratio(word, choice) for word in words]
+            avg_score = sum(match_scores) / len(words)
+            if avg_score >= threshold:
                 return True
         return False
 
