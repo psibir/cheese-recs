@@ -45,7 +45,7 @@ class CheeseRecommender:
 
         return recommendations
 
-    def _is_significant_match(self, user_input, choices, threshold=70):
+    def _is_significant_match(self, user_input, choices, threshold=50):
         words = user_input.split()
         for choice in choices:
             match_count = sum(fuzz.token_set_ratio(word, choice) >= threshold for word in words)
