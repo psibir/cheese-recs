@@ -54,6 +54,9 @@
     {% if cheese_details.alternative_spellings and not cheese_details.alternative_spellings|lower == 'nan' %}
         <li><strong>Alternative Spellings:</strong> {{ cheese_details['alternative_spellings'] }}</li>
     {% endif %}
+    {% if cheese_details.description and not cheese_details.description|lower == 'nan' %}
+        <li><strong>Description:</strong> {{ cheese_details['description'] }}</li>
+    {% endif %}
     </ul>
     <a href="javascript:history.back()">Go Back</a>
 {% endblock %}
