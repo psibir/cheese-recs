@@ -84,5 +84,31 @@ def cheese_library():
     cheeses = recommender.get_all_cheeses(cheese_file)
     return render_template('cheese_library.html', cheeses=cheeses)
 
+@app.route('/pairing_form', methods=['GET', 'POST'])
+def pairing():
+    if request.method == 'POST':
+        pairing_type = request.form.get('pairing_type')
+        
+        if pairing_type == 'food_cheese':
+            food = request.form.get('food')
+            accentuate_flavor = request.form.get('accentuate_flavor')
+            
+            cheese_pairing = CheesePairing(food)
+            pairings = cheese_pairing.pair_cheese_with_food(food)
+            
+            return render_template('pairing_results.html', pairing_type=pairing_type, food=food, accentuate_flavor=accentuate_flavor, pairings=pairings)
+        
+        elif pairing_type == 'cheese_food':
+            cheese = request.form.get('cheese')
+            flavor = request.form.get('flavor')
+            
+            # Perform pairing logic for cheese and food accentuation
+            # ...
+            
+            return render_template('pairing_results.html', pairing_type=pairing_type, cheese=cheese, flavor=flavor)
+    
+    return render_template('pairing_form.html')
+
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
