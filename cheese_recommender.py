@@ -12,8 +12,9 @@ class CheeseRecommender:
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
         words = user_input.split()
-        if not any(word in self.df['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'].tolist() for word in words):
-            return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
+        cheese_columns = ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer']
+        if not any(word in self.df[cheese_columns].values.flatten() for word in words):
+            return pd.DataFrame(columns=cheese_columns)
 
         self.df.fillna('', inplace=True)
         cheese_desc = self.df.apply(lambda x: ' '.join(x), axis=1)
@@ -23,9 +24,7 @@ class CheeseRecommender:
         sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
         sim_indices = sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
 
-        recommendations = self.df.iloc[sim_indices][
-            ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description',
-             'producer']]
+        recommendations = self.df.iloc[sim_indices][cheese_columns]
         recommendations['origin'] = recommendations['origin'].str.split(',').str[0]
 
         if exclude_words:
@@ -33,7 +32,7 @@ class CheeseRecommender:
             filtered_recommendations = []
             for index, row in recommendations.iterrows():
                 should_exclude = False
-                for field in ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description']:
+                for field in cheese_columns:
                     if any(word in str(row[field]).lower() for word in exclude_words_lower):
                         should_exclude = True
                         break
@@ -42,7 +41,7 @@ class CheeseRecommender:
             recommendations = pd.DataFrame(filtered_recommendations)
 
         if recommendations.empty:
-            return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
+            return pd.DataFrame(columns=cheese_columns)
 
         return recommendations
 
