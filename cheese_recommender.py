@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from fuzzywuzzy import fuzz
 import random
 
 
@@ -13,6 +14,9 @@ class CheeseRecommender:
         self.df.fillna('', inplace=True)
         cheese_desc = self.df.apply(lambda x: ' '.join(x), axis=1)
         cheese_matrix = self.vectorizer.fit_transform(cheese_desc)
+
+        if user_input is None or not self._is_significant_match(user_input, self.df['cheese']):
+            return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
         user_vector = self.vectorizer.transform([user_input])
         sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
@@ -40,6 +44,12 @@ class CheeseRecommender:
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
         return recommendations
+
+    def _is_significant_match(self, word, choices, threshold=80):
+        for choice in choices:
+            if fuzz.token_set_ratio(word, choice) >= threshold:
+                return True
+        return False
 
     @classmethod
     def get_all_cheeses(cls, cheese_file):
