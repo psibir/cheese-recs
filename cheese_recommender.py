@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from fuzzywuzzy import fuzz
-import random
 
 class CheeseRecommender:
     def __init__(self, cheese_file):
@@ -17,15 +16,13 @@ class CheeseRecommender:
         if user_input is None or not self._is_significant_match(user_input, self.df['cheese']):
             return pd.DataFrame(columns=['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer'])
 
-        user_input_list = user_input.split()
-        user_input_modified = ' '.join(user_input_list)
+        user_input_modified = ' '.join(user_input.split())
         user_vector = self.vectorizer.transform([user_input_modified])
         sim_scores = cosine_similarity(user_vector, cheese_matrix).flatten()
         sim_indices = sim_scores.argsort()[::-1][start_index:num_recommendations + start_index]
 
         recommendations = self.df.iloc[sim_indices][
-            ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description',
-             'producer']]
+            ['cheese', 'milk', 'origin', 'region', 'kind', 'color', 'texture', 'flavor', 'aroma', 'description', 'producer']]
         recommendations['origin'] = recommendations['origin'].str.split(',').str[0]
 
         if exclude_words:
@@ -46,13 +43,10 @@ class CheeseRecommender:
 
         return recommendations
 
-    def _is_significant_match(self, word, choices, threshold=80):
-        words = word.split()
+    def _is_significant_match(self, user_input, choices, threshold=70):
+        words = user_input.split()
         for choice in choices:
-            match_count = 0
-            for w in words:
-                if fuzz.token_set_ratio(w, choice) >= threshold:
-                    match_count += 1
+            match_count = sum(fuzz.token_set_ratio(word, choice) >= threshold for word in words)
             if match_count == len(words):
                 return True
         return False
